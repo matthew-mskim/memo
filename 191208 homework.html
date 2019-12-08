@@ -1,0 +1,190 @@
+
+<html lang="en">
+<head>
+
+  <!-- Webpage Title -->
+  <title>나홀로 쇼핑몰</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JS -->		
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script>
+    function order() {
+<<<<<<< HEAD
+
+=======
+      $('#orders-box').html('');
+>>>>>>> 9e39bfad241ca62233b1adb10eead77b13e83f7f
+      $.ajax({
+        type: "GET",
+        url: "http://spartacodingclub.shop/order",
+        data: {},
+        success: function(response){
+          let rows = response["orders"];
+          for (let i = 0; i < rows.length; i++) {
+            let address = rows[i]['address'];
+            let count = rows[i]['count'];
+            let name = rows[i]['name'];
+            let phone = rows[i]['phone'];
+
+            let temp_html = '<tr>\
+            <th scope="row">"'+address+'"</th>\
+            <td>"'+count+'"</td>\
+            <td>"'+name+'"</td>\
+            <td>"'+phone+'"</td>\
+            </tr>\
+            </tbody>';
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> 9e39bfad241ca62233b1adb10eead77b13e83f7f
+            $('#orders-box').append(temp_html);
+          }
+        }
+      })
+    }
+
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> 9e39bfad241ca62233b1adb10eead77b13e83f7f
+  </script>
+
+  <style type="text/css">
+    .wrap{
+      width: 500px;
+      margin: auto;
+    }
+    .img{
+      background-image: url('https://cdn.cnn.com/cnnnext/dam/assets/191121212606-tesla-cybertruck-exlarge-169.jpg');
+      background-size: cover;
+      background-position: center;
+      width: 500px;
+      height:300px;
+    }
+    .info{
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    h1, h5{
+      display: inline;
+    }
+
+    .order{
+      text-align:center;
+    }
+    .orders{
+      margin-top: 100px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="wrap" style="user-select: auto;">
+    <div class="img" style="user-select: auto;">
+    </div>
+    <div class="info" style="user-select: auto;">
+      <h1 style="user-select: auto;">차를 팝니다</h1>
+      <h5 style ="user-select: auto;">가격: 90,000,000원 </h5>
+      <p style="user-select: auto;">
+        이 차는 총알을 맞으면 창문이 뚫립니다! 이 차는 총알을 맞으면 창문이 뚫립니다!이 차는 총알을 맞으면 창문이 뚫립니다!
+      </p>
+    </div>
+<<<<<<< HEAD
+    
+    <div class="input-group mb-3" style="user-select: auto;">
+      <div class="input-group-prepend" style="user-select: auto;">
+        <span class="input-group-text" id="basic-addon3" style="user-select: auto;">주문자 이름</span>
+      </div>
+      <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3" style="user-select: auto;">
+    </div>
+
+
+=======
+    <div class="info" style="user-select: auto;">
+      <div class="input-group-prepend" style="user-select: auto;">
+        <span class="input-group-text" id="basic-addon3" style="user-select: auto;">주문자 이름</span>
+      </div>
+      <input type="text" class="form-control" id="order_name" aria-describedby="basic-addon3" style="user-select: auto;">
+    </div>
+>>>>>>> 9e39bfad241ca62233b1adb10eead77b13e83f7f
+    <div class="input-group mb-3" style="user-select: auto;">
+      <div class="input-group-prepend" style="user-select: auto;">
+        <label class="input-group-text" for="inputGroupSelect01" style="user-select: auto;">수량</label>
+      </div>
+      <select class="custom-select" id="order_count" style="user-select: auto;">
+        <option selected="" value="" style="user-select: auto;"> -- 수량을 선택하세요 -- </option>
+        <option value="1" style="user-select: auto;">1</option>
+        <option value="2" style="user-select: auto;">2</option>
+        <option value="3" style="user-select: auto;">3</option>
+      </select>
+    </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9e39bfad241ca62233b1adb10eead77b13e83f7f
+    <div class="input-group mb-3" style="user-select: auto;">
+      <div class="input-group-prepend" style="user-select: auto;">
+        <span class="input-group-text" id="basic-addon3" style="user-select: auto;">주소</span>
+      </div>
+      <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3" style="user-select: auto;">
+    </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9e39bfad241ca62233b1adb10eead77b13e83f7f
+    <div class="input-group mb-3" style="user-select: auto;">
+      <div class="input-group-prepend" style="user-select: auto;">
+        <span class="input-group-text" id="basic-addon3" style="user-select: auto;">전화번호</span>
+      </div>
+      <input type="text" class="form-control" id="order_phone" aria-describedby="basic-addon3" style="user-select: auto;">
+    </div>
+    <div class="order" style="user-select: auto;">
+      <button onclick="order()" type="button" class="btn btn-primary" style="user-select: auto;">주문하기</button>
+    </div>
+    <div class="orders" style="user-select: auto;">
+      <table class="table" style="user-select: auto;">
+        <thead style="user-select: auto;">
+          <tr style="user-select: auto;">
+            <th scope="col">이름</th>
+            <th scope="col">수량</th>
+            <th scope="col">주소</th>
+            <th scope="col">전화번호</th>
+          </tr>
+        </thead>
+        <tbody id="orders-box" style="user-select: auto;">
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  </html>
