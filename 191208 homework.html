@@ -39,8 +39,13 @@
         }
       })
     }
-    
-    function order() {
+
+    $(document).ready(function(){
+      listing()
+      
+    });
+
+    function listing() {
       $('#orders-box').html('');
       $.ajax({
         type: "GET",
