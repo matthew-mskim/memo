@@ -18,11 +18,33 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <script>
+
+    function order() {
+      // 읽기
+      let name = $('#order_name').val();
+      let order = $('#order_count').val();
+      let address = $('#order_address').val();
+      let phone = $('#order_phone').val();
+
+
+      $.ajax({
+        type: "POST",
+        url: "/post",
+        data: { name_give:name, count_give:count, address_give:address, phone_give:phone },
+        success: function(response){
+          if(response['result'] == 'success'){
+            alert('주문 완료!');
+            window.location.reload();
+          }
+        }
+      })
+    }
+    
     function order() {
       $('#orders-box').html('');
       $.ajax({
         type: "GET",
-        url: "http://spartacodingclub.shop/order",
+        url: "/post",
         data: {},
         success: function(response){
           let rows = response["orders"];
@@ -31,7 +53,6 @@
             let count = rows[i]['count'];
             let name = rows[i]['name'];
             let phone = rows[i]['phone'];
-
             let temp_html = '<tr>\
             <th scope="row">"'+address+'"</th>\
             <td>"'+count+'"</td>\
@@ -44,6 +65,7 @@
         }
       })
     }
+
   </script>
 
   <style type="text/css">
